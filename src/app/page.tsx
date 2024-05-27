@@ -22,7 +22,12 @@ export default function Home() {
           </div>
         }
       >
-        <Canvas className='canvas' dpr={1} gl={{ antialias: true }} shadows>
+        <Canvas
+          className='canvas'
+          dpr={[1, 2]}
+          gl={{ preserveDrawingBuffer: true }}
+          shadows
+        >
           <color args={['#000000']} attach='background' />
           <Scene />
         </Canvas>
