@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Suspense fallback={null}>
-        <Canvas dpr={1} gl={{ antialias: true }} shadows>
+        <Canvas className='canvas' dpr={1} gl={{ antialias: true }} shadows>
           <color args={['#000000']} attach='background' />
           <Scene />
         </Canvas>
