@@ -1,7 +1,7 @@
 import { Environment, OrbitControls, useTexture } from '@react-three/drei';
 import Earth from '../Earth/Earth';
 import Moon from '../Moon/Moon';
-// import Spaceship from '../Spaceship/Spaceship';
+import Spaceship from '../Spaceship/Spaceship';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
 import LensFlare from '@/utils/LensFlare';
@@ -15,13 +15,13 @@ const Scene = () => {
 
       <OrbitControls />
       <ambientLight intensity={0.1} />
-      <directionalLight
+      {/* <directionalLight
         position={[-5.5, 0.5, -9.5]}
         intensity={5}
         castShadow
-        shadow-mapSize={[512, 512]}
+        shadow-mapSize={[256, 256]}
         shadow-camera-left={-20}
-      />
+      /> */}
 
       <EffectComposer multisampling={0}>
         <Bloom />
@@ -55,7 +55,7 @@ const Scene = () => {
       />
       <Moon />
       <Earth />
-      {/* <Spaceship /> */}
+      <Spaceship />
     </>
   );
 };
