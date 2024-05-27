@@ -1,7 +1,7 @@
 import { Environment, OrbitControls, useTexture } from '@react-three/drei';
 import Earth from '../Earth/Earth';
-// import Moon from '../Moon/Moon';
-import Spaceship from '../Spaceship/Spaceship';
+import Moon from '../Moon/Moon';
+// import Spaceship from '../Spaceship/Spaceship';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
 import LensFlare from '@/utils/LensFlare';
@@ -53,9 +53,9 @@ const Scene = () => {
         backgroundIntensity={1}
         environmentIntensity={0}
       />
-      {/* <Moon /> */}
+      <Moon />
       <Earth />
-      <Spaceship />
+      {/* <Spaceship /> */}
     </>
   );
 };
