@@ -7,7 +7,7 @@ import { BlendFunction } from 'postprocessing';
 import LensFlare from '@/utils/LensFlare';
 
 const Scene = () => {
-  const dirtTexture = useTexture('./textures/lensDirt.png');
+  const dirtTexture = useTexture('./textures/lensDirt.jpg');
 
   return (
     <>
@@ -42,12 +42,12 @@ const Scene = () => {
 
       <Environment
         files={[
-          './textures/px.png',
-          './textures/nx.png',
-          './textures/py.png',
-          './textures/ny.png',
-          './textures/pz.png',
-          './textures/nz.png',
+          './textures/px.jpg',
+          './textures/nx.jpg',
+          './textures/py.jpg',
+          './textures/ny.jpg',
+          './textures/pz.jpg',
+          './textures/nz.jpg',
         ]}
         background
         backgroundIntensity={1}
