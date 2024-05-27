@@ -1,14 +1,7 @@
-import { FC } from 'react';
-import * as THREE from 'three';
-import {
-  Environment,
-  OrbitControls,
-  useCamera,
-  useTexture,
-} from '@react-three/drei';
+import { Environment, OrbitControls, useTexture } from '@react-three/drei';
 import Earth from '../Earth/Earth';
+import Moon from '../Moon/Moon';
 import Spaceship from '../Spaceship/Spaceship';
-import { useThree } from '@react-three/fiber';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
 import LensFlare from '@/utils/LensFlare';
@@ -18,7 +11,17 @@ const Scene = () => {
 
   return (
     <>
+      {/* <axesHelper args={[5]} /> */}
+
       <OrbitControls />
+      <ambientLight intensity={0.1} />
+      <directionalLight
+        position={[-5.5, 0.5, -9.5]}
+        intensity={5}
+        castShadow
+        shadow-mapSize={[512, 512]}
+        shadow-camera-left={-20}
+      />
 
       <EffectComposer multisampling={0}>
         <Bloom />
@@ -39,17 +42,18 @@ const Scene = () => {
 
       <Environment
         files={[
-          './textures/px.jpg',
-          './textures/nx.jpg',
-          './textures/py.jpg',
-          './textures/ny.jpg',
-          './textures/pz.jpg',
-          './textures/nz.jpg',
+          './textures/px.png',
+          './textures/nx.png',
+          './textures/py.png',
+          './textures/ny.png',
+          './textures/pz.png',
+          './textures/nz.png',
         ]}
         background
         backgroundIntensity={1}
         environmentIntensity={0}
       />
+      <Moon />
       <Earth />
       <Spaceship />
     </>

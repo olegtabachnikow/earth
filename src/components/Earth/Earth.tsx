@@ -6,15 +6,14 @@ import vertexEarthShader from '@/shaders/earth/vertex';
 import fragmentEarthShader from '@/shaders/earth/fragment';
 import vertexAtmosphereShader from '@/shaders/atmosphere/vertex';
 import fragmentAtmosphereShader from '@/shaders/atmosphere/fragment';
-
-const geometry = <sphereGeometry args={[2, 64, 32]} />;
+import { planetGeometry as geometry } from '@/utils/constants';
 
 const Earth: FC = () => {
   const sceneRef = useRef<THREE.Group>(null);
 
   const [dayTexture, nightTexture, specularTexture] = useTexture([
-    './textures/earth/day.jpg',
-    './textures/earth/night.jpg',
+    './textures/earth/day.jpeg',
+    './textures/earth/night.jpeg',
     './textures/earth/specularClouds.jpg',
   ]);
   dayTexture.colorSpace = THREE.SRGBColorSpace;
@@ -22,7 +21,7 @@ const Earth: FC = () => {
   nightTexture.colorSpace = THREE.SRGBColorSpace;
   nightTexture.anisotropy = 8;
 
-  const sunSpherical = new THREE.Spherical(1, 1.6, -3);
+  const sunSpherical = new THREE.Spherical(1, 1.6, -2.7);
   const sunDirection = new THREE.Vector3().setFromSpherical(sunSpherical);
 
   const atmosphereUniforms = {
@@ -38,7 +37,7 @@ const Earth: FC = () => {
     ...atmosphereUniforms,
   };
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (sceneRef.current) sceneRef.current.rotation.y += delta * 0.1;
   });
 
@@ -54,7 +53,7 @@ const Earth: FC = () => {
           transparent
         />
       </mesh>
-      <mesh>
+      <mesh castShadow>
         {geometry}
         <shaderMaterial
           uniforms={earthUniforms}
