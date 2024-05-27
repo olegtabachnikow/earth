@@ -7,7 +7,21 @@ import { Suspense } from 'react';
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Suspense fallback={null}>
+      <Suspense
+        fallback={
+          <div
+            style={{
+              display: 'flex',
+              width: '100%',
+              height: '100%',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <p>Loading...</p>
+          </div>
+        }
+      >
         <Canvas className='canvas' dpr={1} gl={{ antialias: true }} shadows>
           <color args={['#000000']} attach='background' />
           <Scene />

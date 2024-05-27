@@ -12,8 +12,8 @@ const Earth: FC = () => {
   const sceneRef = useRef<THREE.Group>(null);
 
   const [dayTexture, nightTexture, specularTexture] = useTexture([
-    './textures/earth/day.jpeg',
-    './textures/earth/night.jpeg',
+    './textures/earth/day.jpg',
+    './textures/earth/night.jpg',
     './textures/earth/specularClouds.jpg',
   ]);
   dayTexture.colorSpace = THREE.SRGBColorSpace;
