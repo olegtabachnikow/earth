@@ -53,7 +53,7 @@ const Scene = () => {
         backgroundIntensity={1}
         environmentIntensity={0}
       />
-      <Moon />
+      {/* <Moon /> */}
       <Earth />
       <Spaceship />
     </>

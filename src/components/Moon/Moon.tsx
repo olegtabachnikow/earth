@@ -5,7 +5,7 @@ import { useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
 const Moon: FC = () => {
-  const [angle, setAngle] = useState(20);
+  const [angle, setAngle] = useState<number>(0);
   const moonRef = useRef<THREE.Mesh>(null);
 
   useFrame((_, delta) => {
