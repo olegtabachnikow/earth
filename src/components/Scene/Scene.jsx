@@ -11,17 +11,15 @@ const Scene = () => {
 
   return (
     <>
-      {/* <axesHelper args={[5]} /> */}
-
       <OrbitControls />
       <ambientLight intensity={0.1} />
-      {/* <directionalLight
+      <directionalLight
         position={[-5.5, 0.5, -9.5]}
         intensity={5}
         castShadow
         shadow-mapSize={[256, 256]}
         shadow-camera-left={-20}
-      /> */}
+      />
 
       <EffectComposer multisampling={0}>
         <Bloom />
