@@ -37,7 +37,7 @@ const Moon: FC = () => {
   });
 
   return (
-    <mesh ref={moonRef} scale={0.27} position={2.1} receiveShadow>
+    <mesh ref={moonRef} scale={0.27} position={2.1}>
       {geometry}
       <shaderMaterial
         uniforms={moonUniforms}

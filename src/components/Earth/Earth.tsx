@@ -53,7 +53,7 @@ const Earth: FC = () => {
           transparent
         />
       </mesh>
-      <mesh castShadow>
+      <mesh>
         {geometry}
         <shaderMaterial
           uniforms={earthUniforms}

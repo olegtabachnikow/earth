@@ -26,7 +26,6 @@ export default function Home() {
           className='canvas'
           dpr={[1, 2]}
           gl={{ preserveDrawingBuffer: true }}
-          shadows
         >
           <color args={['#000000']} attach='background' />
           <Scene />
