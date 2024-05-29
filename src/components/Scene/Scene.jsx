@@ -1,4 +1,9 @@
-import { Environment, OrbitControls, useTexture } from '@react-three/drei';
+import {
+  Environment,
+  OrbitControls,
+  useTexture,
+  useAspect,
+} from '@react-three/drei';
 import Earth from '../Earth/Earth';
 import Moon from '../Moon/Moon';
 import Spaceship from '../Spaceship/Spaceship';
@@ -7,13 +12,14 @@ import { BlendFunction } from 'postprocessing';
 import LensFlare from '@/utils/LensFlare';
 
 const Scene = () => {
+  const aspect = useAspect('cover', 1920, 1080);
   const dirtTexture = useTexture('./textures/lensDirt.jpg');
 
   return (
     <>
       <OrbitControls autoRotate />
 
-      <EffectComposer multisampling={0}>
+      <EffectComposer multisampling={0} key={aspect[0]}>
         <Bloom />
         <LensFlare
           lensDirtTexture={dirtTexture}
