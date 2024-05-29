@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { useGLTF, useAnimations } from '@react-three/drei';
+import { useAnimations, useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
 const Spaceship: FC = () => {
