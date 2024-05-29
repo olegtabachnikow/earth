@@ -32,12 +32,12 @@ const Scene = () => {
 
       <Environment
         files={[
-          './textures/px.jpg',
-          './textures/nx.jpg',
-          './textures/py.jpg',
-          './textures/ny.jpg',
-          './textures/pz.jpg',
-          './textures/nz.jpg',
+          './textures/px.png',
+          './textures/nx.png',
+          './textures/py.png',
+          './textures/ny.png',
+          './textures/pz.png',
+          './textures/nz.png',
         ]}
         background
         backgroundIntensity={1}
