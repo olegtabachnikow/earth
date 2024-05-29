@@ -5,7 +5,7 @@ import { useFrame } from '@react-three/fiber';
 
 const Spaceship: FC = () => {
   const modelRef = useRef<THREE.Group>(null);
-  const { scene, animations } = useGLTF('./spaceship.glb');
+  const { scene, animations } = useGLTF('./spaceshipCompressed.glb');
   const { actions } = useAnimations(animations, scene);
   const actionsArray = Object.values(actions);
 
